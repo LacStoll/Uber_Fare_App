@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity {
+    //Declaring UI Components
     TextView vehicleTxt, distanceTxt, totalTxt;
     ImageView vehicleImg;
     Button RequestRideBtn, goBackButton;
@@ -30,23 +31,13 @@ public class SecondActivity extends AppCompatActivity {
         RequestRideBtn = findViewById(R.id.RequestRideBtn);
         goBackButton = findViewById(R.id.goBackButton);
 
+        //Getting the shared information from MainActivity
         sharedPreferences = getSharedPreferences("UberData", MODE_PRIVATE);
-
         int distance = sharedPreferences.getInt("distance", 0);
         String vehicle = sharedPreferences.getString("vehicle", "");
 
+        //Used to Calculate the fare, I originally used if-else statements switched it switch-case
         double fare = 3.0 + (3.25 * distance);
-
-//        switch (vehicle) {
-//            case "Smart Car":
-//                fare += 2.0;
-//                break;
-//            case "Minivan":
-//                fare += 5.0;
-//                break;
-//            case "Sedan":
-//                fare += 0;
-//                break;
         switch (vehicle) {
             case "Smart Car":
                 fare += 2.0;
@@ -61,15 +52,17 @@ public class SecondActivity extends AppCompatActivity {
                 break;
         }
 
+        //Sets the TextViews to show the results
         vehicleTxt.setText(String.format("Vehicle: " + vehicle));
         distanceTxt.setText(String.format("Distance: " + distance + " miles"));
         totalTxt.setText(String.format("Total: $%.2f", fare));
 
+        //Using a Lambda function to set click listener to switch to the third activity
         RequestRideBtn.setOnClickListener(v -> {
             Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
             startActivity(intent);
         });
-
+        //Used to go back to the first activity
         goBackButton.setOnClickListener(v -> {
             Intent intent = new Intent(SecondActivity.this, MainActivity.class);
             startActivity(intent);

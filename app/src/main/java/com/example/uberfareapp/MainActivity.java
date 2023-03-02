@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+    // Declaring the UI components
     EditText EditMiles;
     RadioGroup vehicleoption;
     RadioButton smartCarbtn, sedanbtn, minivanbtn;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         EditMiles = findViewById(R.id.EditMiles);
         vehicleoption = findViewById(R.id.vehicleoptions);
         smartCarbtn = findViewById(R.id.smartCarbtn);
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("UberData", MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
+        //Setting a listener for the estimate button using Lambda
         estimatebtn.setOnClickListener(v -> {
             int distance = Integer.parseInt(EditMiles.getText().toString());
             int vehicleId = vehicleoption.getCheckedRadioButtonId();
@@ -40,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+            // Setting vehicleId depending on which RadioBtn is clicked
             if (vehicleId == R.id.smartCarbtn) {
                 vehicle = "Smart Car";
             } else if (vehicleId == R.id.sedanbtn) {
@@ -49,10 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 vehicle = "Minivan";
             }
 
+            // Stores the data in shared preferences
             editor.putInt("distance", distance);
             editor.putString("vehicle", vehicle);
             editor.apply();
 
+            //Starts the second activity
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
             startActivity(intent);
         });
