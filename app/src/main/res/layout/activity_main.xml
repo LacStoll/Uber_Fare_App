@@ -1,0 +1,84 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/distanceprompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_distance_miles"
+        android:textSize="20sp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="50dp" />
+
+
+    <EditText
+        android:id="@+id/EditMiles"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/miles"
+        android:textAlignment="center"
+        android:inputType="number"
+        android:textSize="20sp"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/vehicleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_vehicle_type"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="50dp"/>
+
+    <RadioGroup
+        android:id="@+id/vehicleoptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="50dp">
+
+        <RadioButton
+            android:id="@+id/smartCarbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/smart_car"/>
+
+        <RadioButton
+            android:id="@+id/sedanbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:checked="true"
+            android:text="@string/sedan"
+            />
+
+        <RadioButton
+            android:id="@+id/minivanbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/minivan"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/estimatebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/estimate_uber_cost"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="50dp" />
+
+</LinearLayout>

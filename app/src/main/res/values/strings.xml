@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Uber Fare App</string>
+    <string name="enter_distance_miles">Enter Distance (miles)</string>
+    <string name="miles">Miles</string>
+    <string name="select_vehicle_type">Select Vehicle Type</string>
+    <string name="smart_car">Smart Car</string>
+    <string name="sedan">Sedan</string>
+    <string name="estimate_uber_cost">Estimate Uber Cost</string>
+    <string name="minivan">Minivan</string>
+    <string name="your_uber_has_been_requested">Your Uber has been requested!</string>
+    <string name="driver">Driver</string>
+    <string name="your_driver_is">Your driver is:</string>
+    <string name="bart_simpson">Bart Simpson</string>
+    <string name="vehicle">Vehicle:</string>
+    <string name="distance">Distance:</string>
+    <string name="total">Total:</string>
+    <string name="request_ride_now">Request Ride Now</string>
+    <string name="go_back_to_beginning">Go Back to Beginning</string>
+</resources>
